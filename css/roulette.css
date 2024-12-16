@@ -3,6 +3,7 @@
     --main-color: rgb(245, 245, 245);
     --sub-color: rgb(245, 245, 245);
     --bg-color: #000000;
+    --avantbg-color: #1f46ba;
     /* --secondary-color: #2ecc71; */
     /* --font-size-large: 2em; */
     --orange-color: #f2711c;
@@ -48,6 +49,7 @@ li {
     display: block;
     width: 100%;
     padding: 16px 24px;
+    margin-bottom: 15px;
     border: none;
     border-radius: .28571429rem;
     font-weight: 700;
@@ -126,13 +128,13 @@ body {
     height: 180px;
     font-family: 'Alfa Slab One', serif;
     padding: 10px 0px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
     font-weight: bold;
     border-width: 4px;
     border-style: solid;
-    border-color: var(--sub-color);
-    background: transparent;
+    border-color: var(--avantbg-color);
+    background: var(--avantbg-color);
     border-radius: 10px;
 }
 
@@ -163,8 +165,8 @@ body {
     border: none;
 
     /* background-color: rgba(52, 152, 219, 0.5); */
-    /* background-color: var(--sub-color);
-    color: #000000; */
+    /* background-color: var(--sub-color); */
+    background: var(--avantbg-color);
     
 
     /* アニメーション追加 */
@@ -278,8 +280,42 @@ body {
 
 
 /* -------------------nameList-container------------------------------- */
+.nameList-container {
+    height: 240px;
+    width: 80%;
+    margin: 40px auto 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /* background: var(--bg-color); */
+}
 
+.nameList {
+    /* margin: 10px 60px; */
+}
 
+.nameList-items {
+    text-align: center; 
+    /* height: 220px; */
+    width: 400px;
+    background: var(--sub-color);
+    margin: 10px 60px;
+    padding: 0 !important;
+}
+
+.listLable {
+    color: var(--sub-color);
+    font-weight: 700;
+}
+
+.name-item {
+    /* color: var(--sub-color); */
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px; 
+    list-style: none;
+    padding: 4px 0;
+}
 
 /* -------------------setting-container------------------------------- */
 

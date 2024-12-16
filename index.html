@@ -39,33 +39,30 @@
             <button id="btn_countDown" class="ui label orange button">-</button>
           <!-- </div> -->
         </div>
+        <div class="ui labels">
+          <!-- <div class="label-container"> -->
+            <button id="btn_QuizCountUp" class="ui label orange button">+</button>
+            <div class="ui label count">残りクイズチャンス回数</div>
+            <div id="host_QuizCount" class="ui label count">6</div>
+            <button id="btn_QuizCountDown" class="ui label orange button">-</button>
+          <!-- </div> -->
+        </div>
         <!-- <div class="ui divider hidden"></div>   -->
     </div>
-    <!-- <div class="nameList-container">
-        <div class="quiz-nameList">
-            <ul data-playslot="17">
-                <li class="value_0 ">0</li>
-                <li class="value_1 ">1</li>
-                <li class="value_2 ">2</li>
-                <li class="value_3 ">3</li>
+    <div class="nameList-container">
+        <div class="bingo-nameList-container nameList">
+            <div class="listLable red">ビンゴ当たり履歴</div>
+            <ul id="bingoNameList" class="nameList-items">
             </ul>
         </div>
-        <div class="bingo-nameList">
-
-
-
-
-
-            <ul data-playslot="17">
-                <li class="value_0 ">0</li>
-                <li class="value_1 ">1</li>
-                <li class="value_2 ">2</li>
-                <li class="value_3 ">3</li>
-                <li class="value_3 ">4</li>
-            </ul>
-        </div>
-    </div> -->
-    <div class="setting-container">
+        <div class="quiz-nameList-container nameList">
+          <div class="listLable">クイズチャンス当たり履歴 <span id="quizCounter">0</span> 回目</div>
+          <ul id="quizNameList" class="nameList-items">
+          </ul>
+      </div>
+    </div>
+    <!-- 一旦いらないので保留 -->
+    <!-- <div class="setting-container">
         <div class="ui centered grid stackable">
             <div class="four wide column">
               <button id="btn_volume" class="ui fluid pink button">音量調整</button>
@@ -77,7 +74,7 @@
               <button id="btn_close" class="ui fluid blue button">イベント終了</button>
             </div>
         </div>
-    </div>
+    </div> -->
   </div>
   <script src="./js/roulette.js"></script>
 </body>

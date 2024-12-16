@@ -55,6 +55,16 @@ function hide(item) {
   item.classList.add('hidden');
 }
 
+const quizList1 = ["諸橋竜輝","諸口幹男","望月理沙","森純也","森本葵","最上覚輝"];
+const quizList2 = ["倉橋政弥","倉橋佑介","久保田祐介","倉本龍"];
+const quizList3 = ["奥瀬留美","大谷祐司","及川康弘","大和田隆太"];
+const quizList4 = ["西川隆","布矢真一","額賀大樹","信沢一大"];
+const quizList5 = ["長谷川孝太","花里尚樹","原理沙子"];
+const quizList6 = ["旭谷恵里","安東達哉","相原信人","阿部正人"];
+
+const quizListArrays = [quizList1,quizList2,quizList3,quizList4,quizList5,quizList6];
+
+
 // const nameList = ["長谷川孝太", "長谷川１", "長谷川２", "長谷川3", "長谷川4", "長谷川5"];
 let nameList = ["旭谷恵里",
 "安東達哉",
@@ -193,7 +203,7 @@ function spin() {
     if (roopPostion >= reelItemTotal) {
       roopPostion = 0;
     }  
-  }, 120);
+  }, 200);
 
 
   // ランダムな要素を取得
@@ -236,15 +246,35 @@ function checkStartSpinning() {
 
 // 結果を履歴に表示する
 function showResult(item) {
+  // 初期化
+  let bingoNameList = document.getElementById("bingoNameList");
+  let liElements = bingoNameList.querySelectorAll('.name-item');
+  liElements.forEach(li => li.remove());
+
+  let nameRecord = item.textContent;
   // あたり配列を作る
-  selectArray.unshift(item);
+  selectArray.push(nameRecord);
+  if(selectArray.length >= 7) {
+    // nameListから削除する
+    selectArray.shift();
+  }
   console.log("selectArray"+selectArray);
 
-  // 履歴に表示させる
-  // const showResult = document.getElementById("reel").textContent;
+  selectArray.forEach(name => {
+    // 新しいli要素を作成
+    const li = document.createElement("li");
 
-  // 保留
-  // nameListから削除する
+    // 各行のデータをリスト形式で表示
+    li.textContent = name.trim();
+    li.classList.add('name-item');
+
+    // liをulに追加
+    bingoNameList.appendChild(li);
+  });
+
+  // 履歴に表示させる
+  // let bingoResultElement = document.getElementById("bingoNameList");
+  // bingoResultElement.innerText = nameRecord;
 }
 
 // ----------------addEventListener-------------------
@@ -253,8 +283,8 @@ document.getElementById("btn_spin").addEventListener("click", spin);
 
 // 音源
 document.getElementById('btn_spin').addEventListener('click', function() {
-  var audio7 = document.getElementById('audio7');
-  var audio9 = document.getElementById('audio9');
+  let audio7 = document.getElementById('audio7');
+  let audio9 = document.getElementById('audio9');
 
   // 最初の音源を再生
   audio7.play();
@@ -273,3 +303,82 @@ document.getElementById('btn_spin').addEventListener('click', function() {
   });
 });
 
+// カウント増減ボタン
+
+document.getElementById("btn_countUp").addEventListener("click", function() {
+  let countElement = document.getElementById('host_winningCount');
+  let count = countElement.innerText;
+  count++;
+  countElement.innerText = count;
+});
+
+document.getElementById("btn_countDown").addEventListener("click", function() {
+  let countElement = document.getElementById('host_winningCount');
+  let count = countElement.innerText;
+  count--;
+  countElement.innerText = count;
+});
+
+document.getElementById("btn_QuizCountUp").addEventListener("click", function() {
+  let countElement = document.getElementById('host_QuizCount');
+  let count = countElement.innerText;
+  count++;
+  countElement.innerText = count;
+
+  let counterElement = document.getElementById("quizCounter");
+  let counter = counterElement.innerText;
+  counter--;
+  counterElement.textContent = counter;
+
+    // 初期化
+  let quizNameList = document.getElementById("quizNameList");
+  let liElements = quizNameList.querySelectorAll('.name-item');
+  liElements.forEach(li => li.remove());
+
+  if(counter > 0 && counter < 7) {
+    let array = quizListArrays[counter-1];
+    array.forEach(name => {
+      // 新しいli要素を作成
+      const li = document.createElement("li");
+  
+      // 各行のデータをリスト形式で表示
+      li.textContent = name.trim();
+      li.classList.add('name-item');
+  
+      // liをulに追加
+      quizNameList.appendChild(li);
+    });
+  }
+});
+
+document.getElementById("btn_QuizCountDown").addEventListener("click", function() {
+  let countElement = document.getElementById('host_QuizCount');
+  let count = countElement.innerText;
+  count--;
+  countElement.innerText = count;
+
+  let counterElement = document.getElementById("quizCounter");
+  let counter = counterElement.innerText;
+  counter++;
+  counterElement.textContent = counter;
+
+  // 初期化
+  let quizNameList = document.getElementById("quizNameList");
+  let liElements = quizNameList.querySelectorAll('.name-item');
+  liElements.forEach(li => li.remove());
+
+  if(counter >= 1 && counter < 7) {
+    let array = quizListArrays[counter-1];
+    array.forEach(name => {
+      // 新しいli要素を作成
+      const li = document.createElement("li");
+  
+      // 各行のデータをリスト形式で表示
+      li.textContent = name.trim();
+      li.classList.add('name-item');
+  
+      // liをulに追加
+      quizNameList.appendChild(li);
+    });
+  }
+});
