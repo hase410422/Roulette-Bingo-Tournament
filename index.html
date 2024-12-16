@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ビンゴルーレット</title>
+  <link rel="stylesheet" href="./css/roulette.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body style="background-image: url(&quot;images/bg_img/bg_16_d.webp&quot;); margin-right: 0px;">
+  <div class="roulette">
+    <div class="header-Container">
+        <div id="title">
+            B I N G O
+        </div>
+    </div>
+    <div class="slotwrapper" id="slot">
+        <ul id="data-list" class="reel-items">
+          
+        </ul>
+        <!-- <div class="ui medium dimmer"></div> -->
+    </div>
+    <div class="bingo_container">
+        <div class="ui centered grid stackable">
+          <div class="eight wide column">
+            <!-- <button id="btn_spin" class="ui button fluid red" onclick="spin()"> -->
+            <!-- <audio id="audio7" src="./audio/Bingo_Machine-Digital02-7(Shuffle-Dry).mp3"></audio> -->
+            <audio id="audio7" src="./audio/audio7.mp3"></audio>
+            <audio id="audio9" src="./audio/Bingo_Machine-Digital02-9(Result-Dry).mp3"></audio>
+            <button id="btn_spin" class="ui button fluid red">
+              <i class="fas fa-play fas-original"></i>START
+            </button>
+          </div>
+        </div>
+        <!-- <div class="ui divider hidden"></div> -->
+        <div class="ui labels">
+          <!-- <div class="label-container"> -->
+            <button id="btn_countUp" class="ui label orange button">+</button>
+            <div class="ui label count">残り景品数</div>
+            <div id="host_winningCount" class="ui label count">15</div>
+            <button id="btn_countDown" class="ui label orange button">-</button>
+          <!-- </div> -->
+        </div>
+        <!-- <div class="ui divider hidden"></div>   -->
+    </div>
+    <!-- <div class="nameList-container">
+        <div class="quiz-nameList">
+            <ul data-playslot="17">
+                <li class="value_0 ">0</li>
+                <li class="value_1 ">1</li>
+                <li class="value_2 ">2</li>
+                <li class="value_3 ">3</li>
+            </ul>
+        </div>
+        <div class="bingo-nameList">
+
+
+
+
+
+            <ul data-playslot="17">
+                <li class="value_0 ">0</li>
+                <li class="value_1 ">1</li>
+                <li class="value_2 ">2</li>
+                <li class="value_3 ">3</li>
+                <li class="value_3 ">4</li>
+            </ul>
+        </div>
+    </div> -->
+    <div class="setting-container">
+        <div class="ui centered grid stackable">
+            <div class="four wide column">
+              <button id="btn_volume" class="ui fluid pink button">音量調整</button>
+            </div>
+            <div class="four wide column">
+              <button id="btn_reset" class="ui fluid purple button">イベントリセット</button>
+            </div>
+            <div class="four wide column">
+              <button id="btn_close" class="ui fluid blue button">イベント終了</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="./js/roulette.js"></script>
+</body>
+</html>
