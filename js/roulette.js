@@ -203,7 +203,7 @@ function spin() {
     if (roopPostion >= reelItemTotal) {
       roopPostion = 0;
     }  
-  }, 200);
+  }, 125);
 
 
   // ランダムな要素を取得
@@ -217,7 +217,7 @@ function spin() {
     clearInterval(intervalId);
 
     randomReelItem.style.transform = `translateY(${(0) * -100}%)`;
-    randomReelItem.style.transform = 'translateZ(100)';
+    // randomReelItem.style.transform = 'translateZ(100px)';
     console.log("randomReelItem:"+randomReelItem);
     randomReelItem.classList.add('selectFlag');
 
@@ -337,6 +337,7 @@ document.getElementById("btn_QuizCountUp").addEventListener("click", function() 
 
   if(counter > 0 && counter < 7) {
     let array = quizListArrays[counter-1];
+    
     array.forEach(name => {
       // 新しいli要素を作成
       const li = document.createElement("li");
@@ -367,7 +368,7 @@ document.getElementById("btn_QuizCountDown").addEventListener("click", function(
   let liElements = quizNameList.querySelectorAll('.name-item');
   liElements.forEach(li => li.remove());
 
-  if(counter >= 1 && counter < 7) {
+  if(counter > 0 && counter < 7) {
     let array = quizListArrays[counter-1];
     array.forEach(name => {
       // 新しいli要素を作成
