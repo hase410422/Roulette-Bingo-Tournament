@@ -63,7 +63,7 @@ li {
 
 .ui.grid {
     display: flex;
-    /* flex-flow: row wrap;
+     /* flex-flow: row wrap;
     align-items: stretch; */
     /* margin: -1rem -1rem; */
     /* padding: 0; */
@@ -324,3 +324,16 @@ body {
     margin: 200px 0 0px;
 }
 
+
+/* スマホ用のスタイル */ 
+@media (max-width: 600px) { 
+    .slotwrapper { 
+        width: 88%;
+    } 
+    .reel-item { 
+        font-size: 60px;
+        text-align: center; 
+        line-height: 120px; 
+        padding: 40px 0px; 
+    } 
+}

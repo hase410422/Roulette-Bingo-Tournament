@@ -203,7 +203,7 @@ function spin() {
     if (roopPostion >= reelItemTotal) {
       roopPostion = 0;
     }  
-  }, 125);
+  }, 120);
 
 
   // ランダムな要素を取得
@@ -228,7 +228,7 @@ function spin() {
     spinningFlag = false;
 
     // randomReelItem.classList.add('selectFlag');
-  }, 5000);
+  }, 6000);
 
   // randomReelItem.classList.add('select');
 
@@ -283,16 +283,26 @@ document.getElementById("btn_spin").addEventListener("click", spin);
 
 // 音源
 document.getElementById('btn_spin').addEventListener('click', function() {
+  let audio2 = document.getElementById('audio2');
   let audio7 = document.getElementById('audio7');
   let audio9 = document.getElementById('audio9');
 
   // 最初の音源を再生
-  audio7.play();
+  audio2.play();
+  // audio7.play();
 
   // 5秒で一時停止
   // setTimeout(function() {
   //   audio7.pause();
   // }, 5000);
+
+  // 最初の音源が再生終了したら、次の音源を再生
+  audio2.addEventListener('ended', function() {
+    // 次の音源を再生する前に指定した時間（例えば2秒）待つ
+    setTimeout(function() {
+      audio7.play();
+    }, 0); // 0秒待機
+  });
 
   // 最初の音源が再生終了したら、次の音源を再生
   audio7.addEventListener('ended', function() {
